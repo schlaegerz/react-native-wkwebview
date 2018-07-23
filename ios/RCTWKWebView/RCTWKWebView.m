@@ -138,11 +138,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
 
 - (void)setupPostMessageScript {
   if (_messagingEnabled) {
-    NSString *source=@"window.originalPostMessage = window.postMessage; window.postMessage = function (data) { window.webkit.messageHandlers.reactNative.postMessage(data); }";
-    WKUserScript *script = [[WKUserScript alloc] initWithSource:source
-                           injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
-                                               forMainFrameOnly:_injectedJavaScriptForMainFrameOnly];
-    [_webView.configuration.userContentController addUserScript:script];
+ 
   }
 }
 
